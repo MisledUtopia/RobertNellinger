@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Nellinger | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">RN</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link cta-nav">Let's Talk</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="gradient-blob blob-3"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting">Hi, I'm</span>
+                    <span class="name">Robert Nellinger</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    27 years of building from Geocities sites to AI voice bots. 
+                    Full stack developer, solution architect, game maker, and lifelong learner. Whatever tech you've got, I can help.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <div class="window-buttons">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="window-title">innovation.js</div>
+                    </div>
+                    <div class="code-content">
+                        <code>
+<span class="code-keyword">const</span> <span class="code-variable">robertNellinger</span> = {
+  <span class="code-property">role</span>: <span class="code-string">"Lead Solutions Architect"</span>,
+  <span class="code-property">stack</span>: [<span class="code-string">"C#"</span>, <span class="code-string">"React"</span>, <span class="code-string">"AI/LLMs"</span>, <span class="code-string">"n8n"</span>],
+  <span class="code-property">superpower</span>: <span class="code-string">"AI Integration"</span>,
+  <span class="code-property">motto</span>: <span class="code-function">() =></span> {
+    <span class="code-keyword">return</span> <span class="code-string">"Whatever you got, I can help"</span>;
+  }
+};
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        I built my first website when I was 12 years old—a Geocities fan site for a video game I loved, 
+                        armed with an HTML book the size of my head. That was 27 years ago, and my love for tech 
+                        hasn't slowed down one bit.
+                    </p>
+                    <p>
+                        From those early days of reading books and Googling everything, to now leveraging AI daily to build 
+                        smarter, faster solutions—I've touched nearly every corner of the tech stack. I work with LLMs, 
+                        integrate AI into business systems and workflows, and use AI for generation and idea refinement. 
+                        Healthcare systems, e-commerce platforms, AI voice bots, browser games, 3D games in Unreal Engine 5—you name it. 
+                        My philosophy is simple: <strong>whatever you've got, I can help.</strong>
+                    </p>
+                    <p>
+                        I'm not just a developer—I'm an entrepreneur, educator, community builder, and multimedia creator. 
+                        I've started companies, taught aspiring devs how to break into tech, run an art and music festival, 
+                        and produce studio-quality commercials, game cutscenes, and marketing material. I do the voice work, 
+                        the music, the visuals—everything. Technology is my craft, but building things that matter is my calling.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-target="27">0</div>
+                            <div class="stat-label">Years Building</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-target="10">0</div>
+                            <div class="stat-label">Years Professional</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-target="4">0</div>
+                            <div class="stat-label">Companies Built</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="80" fill="#4f46e5" opacity="0.1"/>
+                                <text x="100" y="115" font-size="60" text-anchor="middle" fill="#4f46e5" font-weight="bold">RN</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">My Journey</span>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2025 - Present</div>
+                        <h3 class="timeline-title">Lead Solutions Architect</h3>
+                        <h4 class="timeline-company">Cloud10 Messenger Communications</h4>
+                        <p class="timeline-description">
+                            Building AI voice bots and the systems that power them. Leading architecture decisions, 
+                            integrating LLMs into business workflows, and creating tools that push the boundaries of conversational AI.
+                        </p>
+                        <ul class="timeline-highlights">
+                            <li>Architecting AI voice bot systems with LLM integration</li>
+                            <li>Integrating AI into business systems and workflows</li>
+                            <li>Building thin web UIs with React for rapid deployment</li>
+                            <li>Leveraging n8n for powerful workflow automation</li>
+                            <li>Creating VS Code tools and custom AI-powered interfaces</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dec 2020 - Aug 2025</div>
+                        <h3 class="timeline-title">Software Engineer</h3>
+                        <h4 class="timeline-company">SOLTECH</h4>
+                        <p class="timeline-description">
+                            Full-stack development in the healthcare and medical imaging space, building 
+                            mission-critical applications that support business operations.
+                        </p>
+                        <ul class="timeline-highlights">
+                            <li>Maintained healthcare and medical imaging applications using C#, VB.NET, WinForms</li>
+                            <li>Built data-driven forms and internal tools for business operations</li>
+                            <li>Addressed high-priority production issues, reducing downtime</li>
+                            <li>Collaborated with product and QA teams on scalable solutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2018 - Dec 2020</div>
+                        <h3 class="timeline-title">Sr. Systems Developer</h3>
+                        <h4 class="timeline-company">Shaw Industries</h4>
+                        <p class="timeline-description">
+                            Senior .NET engineer on a major e-commerce platform, establishing patterns 
+                            and practices that elevated the entire team's output.
+                        </p>
+                        <ul class="timeline-highlights">
+                            <li>Built and maintained e-commerce platform in MVC</li>
+                            <li>Established patterns and best practices for the development team</li>
+                            <li>Worked with Autofac DI, AutoMapper, Kentico CMS, Node.js</li>
+                            <li>Pioneered adoption of Blazor and Angular</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jan 2016 - May 2018</div>
+                        <h3 class="timeline-title">Software Developer</h3>
+                        <h4 class="timeline-company">InventureIT</h4>
+                        <p class="timeline-description">
+                            Full-stack .NET developer delivering complete solutions from database to user interface 
+                            across diverse project types.
+                        </p>
+                        <ul class="timeline-highlights">
+                            <li>Delivered end-to-end solutions across various .NET frameworks</li>
+                            <li>Built with WinForms, WebForms, WPF, UWP, Xamarin, MVC</li>
+                            <li>Provided daily support and worked directly with end users</li>
+                            <li>Full stack: C#, SQL, JavaScript, HTML, CSS, WordPress</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What I bring to the table</span>
+                <h2 class="section-title">Skills & Expertise</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-icon">💻</div>
+                    <h3 class="category-title">Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">VB.NET</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">XAML</span>
+                        <span class="skill-tag">C++</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">⚛️</div>
+                    <h3 class="category-title">Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">ASP.NET MVC</span>
+                        <span class="skill-tag">Blazor</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">WPF</span>
+                        <span class="skill-tag">WinForms</span>
+                        <span class="skill-tag">Xamarin</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">☁️</div>
+                    <h3 class="category-title">Cloud & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Supabase</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">🎮</div>
+                    <h3 class="category-title">Game Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unreal Engine 5</span>
+                        <span class="skill-tag">Procedural Generation</span>
+                        <span class="skill-tag">Character Animation</span>
+                        <span class="skill-tag">World Building</span>
+                        <span class="skill-tag">NPC Behaviors</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">🤖</div>
+                    <h3 class="category-title">AI & Automation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LLM Integration</span>
+                        <span class="skill-tag">AI Voice Bots</span>
+                        <span class="skill-tag">Business AI Systems</span>
+                        <span class="skill-tag">AI Workflows</span>
+                        <span class="skill-tag">n8n</span>
+                        <span class="skill-tag">Prompt Engineering</span>
+                        <span class="skill-tag">AI Generation</span>
+                        <span class="skill-tag">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">🗄️</div>
+                    <h3 class="category-title">Data & Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Autofac DI</span>
+                    </div>
+                </div>
+                <div class="skill-category">                    <div class="category-icon">🎨</div>
+                    <h3 class="category-title">Multimedia & Creative</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Video Editing</span>
+                        <span class="skill-tag">Shotcut</span>
+                        <span class="skill-tag">AI Image/Video Gen</span>
+                        <span class="skill-tag">Voice Production</span>
+                        <span class="skill-tag">Music Production</span>
+                        <span class="skill-tag">Commercial Creation</span>
+                        <span class="skill-tag">Game Cutscenes</span>
+                    </div>
+                </div>
+                <div class="skill-category">                    <div class="category-icon">🚀</div>
+                    <h3 class="category-title">Leadership</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Solution Architecture</span>
+                        <span class="skill-tag">Team Mentoring</span>
+                        <span class="skill-tag">Agile/Scrum</span>
+                        <span class="skill-tag">Entrepreneurship</span>
+                        <span class="skill-tag">Technical Education</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image project-netmonkey">
+                        <img src="net.jpg" alt="NetMonkey.dev website screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="https://netmonkey.dev" target="_blank" class="project-link">Visit Site →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Owner</span>
+                            <span class="project-tag">Full Stack</span>
+                        </div>
+                        <h3 class="project-title">NetMonkey.dev</h3>
+                        <p class="project-description">
+                            Founder and sole developer. Designed and built the entire platform from the ground up, 
+                            handling architecture, design, and implementation.
+                        </p>
+                        <div class="project-tech">
+                            <span>Full Stack</span>
+                            <span>Web Design</span>
+                            <span>Solo Dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-stickman">
+                        <img src="stick.jpg" alt="Stickman Combat game screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="https://stickmancombat.com" target="_blank" class="project-link">Play Now →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Owner</span>
+                            <span class="project-tag">Game Dev</span>
+                        </div>
+                        <h3 class="project-title">Stickman Combat</h3>
+                        <p class="project-description">
+                            Pure JavaScript, HTML, and CSS combat game showcasing what's possible without frameworks or libraries. 
+                            Owned and developed entirely by me—proof that vanilla web tech can deliver serious gaming experiences.
+                        </p>
+                        <div class="project-tech">
+                            <span>Vanilla JS</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-blackdepths">
+                        <img src="unreal.jpg" alt="Black Depths Unreal Engine 5 submarine game screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="#contact" class="project-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Unreal Engine</span>
+                            <span class="project-tag">3D Game</span>
+                        </div>
+                        <h3 class="project-title">Black Depths</h3>
+                        <p class="project-description">
+                            Submarine game built in Unreal Engine 5 featuring procedural generation, custom character animations, 
+                            intricate world building, and sophisticated NPC behaviors. A deep dive into advanced game development.
+                        </p>
+                        <div class="project-tech">
+                            <span>UE5</span>
+                            <span>Procedural Gen</span>
+                            <span>Animations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-alchemist">
+                        <img src="alchem.jpg" alt="The Alchemist's Atrium screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="https://alchemistsatrium.com" target="_blank" class="project-link">Play Now →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Game Dev</span>
+                            <span class="project-tag">Indie</span>
+                        </div>
+                        <h3 class="project-title">The Alchemist's Atrium</h3>
+                        <p class="project-description">
+                            My current passion project—a browser-based game built for instant play on any device. 
+                            Part of a larger collection of indie games, including one published on Steam.
+                        </p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-rockthebluff">
+                        <img src="rock.jpg" alt="Rock The Bluff website screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="https://rockthebluff.com" target="_blank" class="project-link">Visit Site →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Founder</span>
+                            <span class="project-tag">Web Design</span>
+                        </div>
+                        <h3 class="project-title">Rock The Bluff</h3>
+                        <p class="project-description">
+                            Art and music festival that I own and operate. Designed and built the website 
+                            to showcase events and bring the community together through creativity.
+                        </p>
+                        <div class="project-tech">
+                            <span>Web Design</span>
+                            <span>Event Tech</span>
+                            <span>Community</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-guidedlegacy">
+                        <img src="guided.jpg" alt="Guided Legacy website screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="https://guidedlegacy.net" target="_blank" class="project-link">Visit Site →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Co-Founder</span>
+                            <span class="project-tag">Architecture</span>
+                        </div>
+                        <h3 class="project-title">Guided Legacy</h3>
+                        <p class="project-description">
+                            Part owner and lead architect of this venture. Built the technical foundation 
+                            and continue to drive the platform's evolution.
+                        </p>
+                        <div class="project-tech">
+                            <span>Full Stack</span>
+                            <span>Architecture</span>
+                            <span>Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-heady">
+                        <img src="something.jpg" alt="Something Heady website screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="https://somethingheady.com" target="_blank" class="project-link">Visit Site →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Co-Owner</span>
+                            <span class="project-tag">Design</span>
+                        </div>
+                        <h3 class="project-title">Something Heady</h3>
+                        <p class="project-description">
+                            Part owner and designer of this creative venture. Bringing unique ideas to life 
+                            through thoughtful design and technical execution.
+                        </p>
+                        <div class="project-tech">
+                            <span>Design</span>
+                            <span>E-commerce</span>
+                            <span>Branding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-dev101">
+                        <img src="dev.jpg" alt="Dev 101 Program screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="#contact" class="project-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Education</span>
+                            <span class="project-tag">Mentorship</span>
+                        </div>
+                        <h3 class="project-title">Dev 101 Program</h3>
+                        <p class="project-description">
+                            Taught 12+ students how to break into tech—covering programming fundamentals, 
+                            office skills, resume building, and interview preparation.
+                        </p>
+                        <div class="project-tech">
+                            <span>Teaching</span>
+                            <span>Curriculum</span>
+                            <span>Career Dev</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-steam">
+                        <img src="steam.jpg" alt="Steam & Indie Games screenshot" class="project-img" />
+                        <div class="project-overlay">
+                            <a href="https://github.com/MisledUtopia" target="_blank" class="project-link">View GitHub →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Published</span>
+                            <span class="project-tag">Game Dev</span>
+                        </div>
+                        <h3 class="project-title">Steam & Indie Games</h3>
+                        <p class="project-description">
+                            A collection of games across multiple technologies—including a title published on Steam. 
+                            Currently focused on browser-based games for maximum accessibility.
+                        </p>
+                        <div class="project-tech">
+                            <span>Steam</span>
+                            <span>Multi-Platform</span>
+                            <span>Indie Dev</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Let's Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    Ready to discuss your next project? I'd love to hear from you.
+                </p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:robertnellinger@gmail.com">robertnellinger@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:9898730802">(989) 873-0802</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/robert-nellinger-38142224/" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💻</div>
+                        <div class="contact-details">
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/MisledUtopia" target="_blank">@MisledUtopia</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Robert Nellinger. Crafted with passion and precision.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/robert-nellinger-38142224/" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/MisledUtopia" target="_blank" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
