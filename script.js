@@ -201,8 +201,15 @@ window.addEventListener('scroll', highlightNavigation);
 
 const contactForm = document.getElementById('contactForm');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    // Disable button and show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
     
     // Get form data
     const formData = {
@@ -212,12 +219,31 @@ contactForm.addEventListener('submit', (e) => {
         message: document.getElementById('message').value
     };
     
-    // Here you would typically send this to a backend service
-    // For now, we'll just show an alert
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    
-    // Reset form
-    contactForm.reset();
+    try {
+        const response = await fetch('send-email.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            alert('Thank you for your message! I\'ll get back to you soon.');
+            contactForm.reset();
+        } else {
+            alert('Error: ' + (result.message || 'Failed to send message. Please try again.'));
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to send message. Please try again or email me directly at contact@robertnellinger.com');
+    } finally {
+        // Re-enable button
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+    }
 });
 
 // ====================================

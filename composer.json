@@ -1,0 +1,7 @@
+{
+    "name": "robertnellinger/portfolio",
+    "description": "Robert Nellinger Portfolio Website",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

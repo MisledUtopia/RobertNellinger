@@ -1,0 +1,19 @@
+# Credentials - NEVER commit these
+config.php
+
+# Composer dependencies (install on server)
+/vendor/
+
+# PHPMailer (downloaded directly)
+/PHPMailer-6.9.1/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
