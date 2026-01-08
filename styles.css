@@ -614,6 +614,7 @@ section {
     max-width: 350px;
     aspect-ratio: 1;
     padding: 20px;
+    overflow: hidden;
 }
 
 .image-frame::before {
@@ -622,7 +623,8 @@ section {
     inset: 0;
     border: 3px solid var(--primary-color);
     border-radius: 2rem;
-    z-index: 0;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .image-placeholder {
@@ -637,9 +639,13 @@ section {
 }
 
 .about-img {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
     object-fit: cover;
     object-position: center;
     border-radius: 1.5rem;
@@ -758,92 +764,24 @@ section {
    ==================================== */
 
 .education {
-    background: var(--bg-white);
-}
-
-.education-content {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.education-card {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
     background: var(--bg-light);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
 }
 
-.education-icon {
-    font-size: 3rem;
-}
-
-.education-details h3 {
-    font-size: 1.5rem;
+.edu-details h4 {
+    font-size: 1.25rem;
     color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.edu-details p {
+    color: var(--text-body);
     margin-bottom: 0.25rem;
 }
 
-.education-details h4 {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.education-school {
-    color: var(--text-body);
-    font-weight: 500;
-}
-
-.education-date {
+.edu-details .edu-date {
     color: var(--text-light);
     font-size: 0.9rem;
-}
-
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.cert-card {
-    background: var(--bg-light);
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    text-align: center;
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.cert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.cert-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.cert-card h4 {
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-}
-
-.cert-card p {
-    color: var(--text-light);
-    font-size: 0.85rem;
-}
-
-.references-note {
-    text-align: center;
-    color: var(--text-light);
-    font-style: italic;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 /* ====================================
