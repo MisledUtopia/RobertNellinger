@@ -405,21 +405,26 @@ document.head.appendChild(trailStyle);
 console.log('🚀 Robert Nellinger Portfolio - Loaded and Ready!');
 
 // ====================================
-// Download Resume Button Event Listener
-// ====================================
-
-document.getElementById('downloadResumeBtn')?.addEventListener('click', function() {
-    generateResumePDF();
-});
-
-// ====================================
 // Dynamic Resume PDF Generation
 // ====================================
 
-function generateResumePDF() {
-    // Gather data from the page
-    const name = "Robert Nellinger";
-    const title = document.querySelector('.timeline-title')?.textContent || "Lead Solutions Architect";
+// Make function globally accessible for onclick handler
+window.generateResumePDF = function() {
+    console.log('generateResumePDF called!');
+    
+    try {
+        // Check if html2pdf is loaded
+        if (typeof html2pdf === 'undefined') {
+            console.error('html2pdf library not loaded!');
+            alert('PDF library not loaded. Please refresh the page and try again.');
+            return;
+        }
+        
+        console.log('html2pdf library found, generating resume...');
+        
+        // Gather data from the page
+        const name = "Robert Nellinger";
+        const title = document.querySelector('.timeline-title')?.textContent || "Lead Solutions Architect";
     const email = "robertnellinger@gmail.com";
     const phone = "(989) 873-0802";
     const linkedin = "linkedin.com/in/robert-nellinger-38142224";
@@ -452,8 +457,9 @@ function generateResumePDF() {
         `;
     });
     
-    // Get skills by category
-    const skillCategories = document.querySelectorAll('.skill-category');
+    // Get skills by category (only from Skills section, not Education section)
+    const skillsSection = document.getElementById('skills');
+    const skillCategories = skillsSection?.querySelectorAll('.skill-category') || [];
     let skillsHTML = '';
     skillCategories.forEach(cat => {
         const catTitle = cat.querySelector('.category-title')?.textContent || '';
@@ -465,19 +471,20 @@ function generateResumePDF() {
         }
     });
     
-    // Get education
-    const eduDegree = document.querySelector('.education-details h3')?.textContent || '';
-    const eduField = document.querySelector('.education-details h4')?.textContent || '';
-    const eduSchool = document.querySelector('.education-school')?.textContent || '';
-    const eduDate = document.querySelector('.education-date')?.textContent || '';
+    // Get education from the Education section
+    const eduSection = document.getElementById('education');
+    const eduDetails = eduSection?.querySelector('.edu-details');
+    const eduDegree = eduDetails?.querySelector('h4')?.textContent || '';
+    const eduField = eduDetails?.querySelector('p strong')?.textContent || '';
+    const eduSchool = eduDetails?.querySelectorAll('p')[1]?.textContent || '';
+    const eduDate = eduDetails?.querySelector('.edu-date')?.textContent || '';
     
-    // Get certifications
-    const certCards = document.querySelectorAll('.cert-card');
+    // Get certifications from the Certifications category in Education section
+    const certCategory = eduSection?.querySelectorAll('.skill-category')[2]; // Third card is Certifications
+    const certTags = certCategory?.querySelectorAll('.skill-tag') || [];
     let certsHTML = '';
-    certCards.forEach(cert => {
-        const certTitle = cert.querySelector('h4')?.textContent || '';
-        const certDesc = cert.querySelector('p')?.textContent || '';
-        certsHTML += `<li>${certTitle} - ${certDesc}</li>`;
+    certTags.forEach(tag => {
+        certsHTML += `<li>${tag.textContent}</li>`;
     });
     
     // Build the resume HTML
@@ -497,6 +504,7 @@ function generateResumePDF() {
                 #resume-content li { margin-bottom: 4px; line-height: 1.5; }
                 #resume-content .skills-section p { font-size: 11px; margin-bottom: 6px; }
                 #resume-content .edu-item { margin-bottom: 10px; }
+                #resume-content .page-break { page-break-before: always; margin-top: 0; padding-top: 0; }
             </style>
             
             <h1>${name}</h1>
@@ -508,7 +516,7 @@ function generateResumePDF() {
             <h3>Professional Experience</h3>
             ${experienceHTML}
             
-            <h3>Technical Skills</h3>
+            <h3 class="page-break">Technical Skills</h3>
             <div class="skills-section">
                 ${skillsHTML}
             </div>
@@ -530,23 +538,44 @@ function generateResumePDF() {
         </div>
     `;
     
-    // Create a temporary container
-    const container = document.createElement('div');
-    container.innerHTML = resumeHTML;
-    document.body.appendChild(container);
-    
-    // PDF options
-    const opt = {
-        margin: [0.5, 0.5, 0.5, 0.5],
-        filename: 'Robert_Nellinger_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
-    
-    // Generate PDF
-    html2pdf().set(opt).from(container.firstChild).save().then(() => {
-        // Clean up
-        document.body.removeChild(container);
-    });
-}
+        // Create a temporary container - HIDDEN off-screen
+        const container = document.createElement('div');
+        container.style.position = 'absolute';
+        container.style.left = '-9999px';
+        container.style.top = '0';
+        container.style.width = '800px';
+        container.innerHTML = resumeHTML;
+        document.body.appendChild(container);
+        
+        console.log('Resume HTML created, calling html2pdf...');
+        
+        // Get the actual resume element
+        const resumeElement = document.getElementById('resume-content');
+        
+        // PDF options
+        const opt = {
+            margin: [0.5, 0.5, 0.5, 0.5],
+            filename: 'Robert_Nellinger_Resume.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        
+        // Generate PDF
+        html2pdf().set(opt).from(resumeElement).save().then(() => {
+            console.log('PDF generated successfully!');
+            // Clean up
+            document.body.removeChild(container);
+        }).catch(err => {
+            console.error('PDF generation failed:', err);
+            document.body.removeChild(container);
+        });
+        
+    } catch (error) {
+        console.error('Error in generateResumePDF:', error);
+        alert('Error generating resume: ' + error.message);
+    }
+};
+
+// Also keep function reference for event listeners
+const generateResumePDF = window.generateResumePDF;

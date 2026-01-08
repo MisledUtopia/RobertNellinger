@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -21,6 +20,7 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link cta-nav">Let's Talk</a></li>
             </ul>
             <div class="hamburger">
@@ -55,7 +55,7 @@
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
                     <a href="#projects" class="btn btn-secondary">View My Work</a>
-                    <button type="button" class="btn btn-tertiary" id="downloadResumeBtn">Download Resume</button>
+                    <button type="button" class="btn btn-tertiary" id="downloadResumeBtn" onclick="generateResumePDF()">Resume</button>
                 </div>
             </div>
             <div class="hero-visual">
@@ -376,10 +376,7 @@
                         <span class="skill-tag">Team Mentoring</span>
                         <span class="skill-tag">Agile/Scrum</span>
                         <span class="skill-tag">Entrepreneurship</span>
-                        <span class="skill-tag">Technical Education</span>
                         <span class="skill-tag">Code Review</span>
-                        <span class="skill-tag">Cross-Team Collaboration</span>
-                        <span class="skill-tag">Client Communication</span>
                     </div>
                 </div>
             </div>
@@ -697,7 +694,6 @@
                         <span class="skill-tag">AI Foundations</span>
                         <span class="skill-tag">Machine Learning</span>
                         <span class="skill-tag">Scrum: Advanced</span>
-                        <span class="skill-tag">GitHub for Web Designers</span>
                     </div>
                 </div>
             </div>
@@ -786,6 +782,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
