@@ -156,8 +156,13 @@ document.querySelectorAll('.stat-number').forEach(counter => {
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        // Skip if href is just "#" or has onclick handler
+        if (href === '#' || this.hasAttribute('onclick')) {
+            return;
+        }
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         
         if (target) {
             const offsetTop = target.offsetTop - 80;
@@ -398,3 +403,150 @@ trailStyle.textContent = `
 document.head.appendChild(trailStyle);
 
 console.log('🚀 Robert Nellinger Portfolio - Loaded and Ready!');
+
+// ====================================
+// Download Resume Button Event Listener
+// ====================================
+
+document.getElementById('downloadResumeBtn')?.addEventListener('click', function() {
+    generateResumePDF();
+});
+
+// ====================================
+// Dynamic Resume PDF Generation
+// ====================================
+
+function generateResumePDF() {
+    // Gather data from the page
+    const name = "Robert Nellinger";
+    const title = document.querySelector('.timeline-title')?.textContent || "Lead Solutions Architect";
+    const email = "robertnellinger@gmail.com";
+    const phone = "(989) 873-0802";
+    const linkedin = "linkedin.com/in/robert-nellinger-38142224";
+    const github = "github.com/MisledUtopia";
+    
+    // Get experience items
+    const experienceItems = document.querySelectorAll('.timeline-item');
+    let experienceHTML = '';
+    experienceItems.forEach(item => {
+        const date = item.querySelector('.timeline-date')?.textContent || '';
+        const jobTitle = item.querySelector('.timeline-title')?.textContent || '';
+        const company = item.querySelector('.timeline-company')?.textContent || '';
+        const description = item.querySelector('.timeline-description')?.textContent || '';
+        const highlights = item.querySelectorAll('.timeline-highlights li');
+        
+        let highlightsHTML = '';
+        highlights.forEach(li => {
+            highlightsHTML += `<li>${li.textContent}</li>`;
+        });
+        
+        experienceHTML += `
+            <div class="resume-job">
+                <div class="resume-job-header">
+                    <strong>${jobTitle}</strong> | ${company}
+                    <span class="resume-date">${date}</span>
+                </div>
+                <p>${description.trim()}</p>
+                <ul>${highlightsHTML}</ul>
+            </div>
+        `;
+    });
+    
+    // Get skills by category
+    const skillCategories = document.querySelectorAll('.skill-category');
+    let skillsHTML = '';
+    skillCategories.forEach(cat => {
+        const catTitle = cat.querySelector('.category-title')?.textContent || '';
+        const tags = cat.querySelectorAll('.skill-tag');
+        let tagList = [];
+        tags.forEach(tag => tagList.push(tag.textContent));
+        if (tagList.length > 0) {
+            skillsHTML += `<p><strong>${catTitle}:</strong> ${tagList.join(', ')}</p>`;
+        }
+    });
+    
+    // Get education
+    const eduDegree = document.querySelector('.education-details h3')?.textContent || '';
+    const eduField = document.querySelector('.education-details h4')?.textContent || '';
+    const eduSchool = document.querySelector('.education-school')?.textContent || '';
+    const eduDate = document.querySelector('.education-date')?.textContent || '';
+    
+    // Get certifications
+    const certCards = document.querySelectorAll('.cert-card');
+    let certsHTML = '';
+    certCards.forEach(cert => {
+        const certTitle = cert.querySelector('h4')?.textContent || '';
+        const certDesc = cert.querySelector('p')?.textContent || '';
+        certsHTML += `<li>${certTitle} - ${certDesc}</li>`;
+    });
+    
+    // Build the resume HTML
+    const resumeHTML = `
+        <div id="resume-content" style="font-family: 'Inter', Arial, sans-serif; color: #333; padding: 40px; max-width: 800px; margin: 0 auto;">
+            <style>
+                #resume-content h1 { font-size: 28px; margin-bottom: 5px; color: #1e293b; }
+                #resume-content h2 { font-size: 16px; color: #4f46e5; margin-bottom: 15px; font-weight: 500; }
+                #resume-content h3 { font-size: 14px; color: #4f46e5; border-bottom: 2px solid #4f46e5; padding-bottom: 5px; margin: 25px 0 15px 0; text-transform: uppercase; letter-spacing: 1px; }
+                #resume-content .contact-line { font-size: 11px; color: #64748b; margin-bottom: 20px; }
+                #resume-content .contact-line a { color: #4f46e5; text-decoration: none; }
+                #resume-content .resume-job { margin-bottom: 20px; }
+                #resume-content .resume-job-header { display: flex; justify-content: space-between; margin-bottom: 5px; }
+                #resume-content .resume-date { color: #64748b; font-size: 12px; }
+                #resume-content p { font-size: 12px; line-height: 1.6; margin-bottom: 8px; }
+                #resume-content ul { font-size: 11px; margin: 8px 0; padding-left: 20px; }
+                #resume-content li { margin-bottom: 4px; line-height: 1.5; }
+                #resume-content .skills-section p { font-size: 11px; margin-bottom: 6px; }
+                #resume-content .edu-item { margin-bottom: 10px; }
+            </style>
+            
+            <h1>${name}</h1>
+            <h2>${title}</h2>
+            <div class="contact-line">
+                ${email} | ${phone} | <a href="https://${linkedin}">${linkedin}</a> | <a href="https://${github}">${github}</a>
+            </div>
+            
+            <h3>Professional Experience</h3>
+            ${experienceHTML}
+            
+            <h3>Technical Skills</h3>
+            <div class="skills-section">
+                ${skillsHTML}
+            </div>
+            
+            <h3>Education</h3>
+            <div class="edu-item">
+                <strong>${eduDegree}</strong> - ${eduField}<br>
+                <span style="color: #64748b;">${eduSchool} | ${eduDate}</span>
+            </div>
+            
+            <h3>Certifications</h3>
+            <ul>
+                ${certsHTML}
+            </ul>
+            
+            <p style="text-align: center; color: #94a3b8; font-size: 10px; margin-top: 30px;">
+                References available upon request
+            </p>
+        </div>
+    `;
+    
+    // Create a temporary container
+    const container = document.createElement('div');
+    container.innerHTML = resumeHTML;
+    document.body.appendChild(container);
+    
+    // PDF options
+    const opt = {
+        margin: [0.5, 0.5, 0.5, 0.5],
+        filename: 'Robert_Nellinger_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    
+    // Generate PDF
+    html2pdf().set(opt).from(container.firstChild).save().then(() => {
+        // Clean up
+        document.body.removeChild(container);
+    });
+}

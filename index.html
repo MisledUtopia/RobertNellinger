@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -54,6 +55,7 @@
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
                     <a href="#projects" class="btn btn-secondary">View My Work</a>
+                    <button type="button" class="btn btn-tertiary" id="downloadResumeBtn">Download Resume</button>
                 </div>
             </div>
             <div class="hero-visual">
@@ -162,7 +164,6 @@
                             <li>Integrating AI into business systems and workflows</li>
                             <li>Building thin web UIs with React for rapid deployment</li>
                             <li>Leveraging n8n for powerful workflow automation</li>
-                            <li>Creating VS Code tools and custom AI-powered interfaces</li>
                         </ul>
                     </div>
                 </div>
@@ -178,10 +179,12 @@
                             mission-critical applications that support business operations.
                         </p>
                         <ul class="timeline-highlights">
+                            <li>Redesigned SOLTECH's corporate website that is still in use today.</li>
+                            <li>Assigned to dozens of companies to assist with software development and support</li>
+                            <li>Utilized a wide variety of technologies to meet client needs.</li>
                             <li>Maintained healthcare and medical imaging applications using C#, VB.NET, WinForms</li>
                             <li>Built data-driven forms and internal tools for business operations</li>
                             <li>Addressed high-priority production issues, reducing downtime</li>
-                            <li>Collaborated with product and QA teams on scalable solutions</li>
                         </ul>
                     </div>
                 </div>
@@ -193,14 +196,14 @@
                         <h3 class="timeline-title">Sr. Systems Developer</h3>
                         <h4 class="timeline-company">Shaw Industries</h4>
                         <p class="timeline-description">
-                            Senior .NET engineer on a major e-commerce platform, establishing patterns 
+                            Senior Systems Developer for a major e-commerce platform, establishing patterns 
                             and practices that elevated the entire team's output.
                         </p>
                         <ul class="timeline-highlights">
                             <li>Built and maintained e-commerce platform in MVC</li>
                             <li>Established patterns and best practices for the development team</li>
-                            <li>Worked with Autofac DI, AutoMapper, Kentico CMS, Node.js</li>
-                            <li>Pioneered adoption of Blazor and Angular</li>
+                            <li>Taught and mentored engineers that were moving into MVC</li>
+                            <li>Worked with Autofac DI, AutoMapper, Kentico CMS</li>
                         </ul>
                     </div>
                 </div>
@@ -241,10 +244,16 @@
                     <div class="skill-tags">
                         <span class="skill-tag">C#</span>
                         <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Python</span>
                         <span class="skill-tag">VB.NET</span>
                         <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">LINQ</span>
                         <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Razor</span>
                         <span class="skill-tag">XAML</span>
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Regex</span>
                         <span class="skill-tag">C++</span>
                     </div>
                 </div>
@@ -255,11 +264,16 @@
                         <span class="skill-tag">React</span>
                         <span class="skill-tag">ASP.NET MVC</span>
                         <span class="skill-tag">Blazor</span>
-                        <span class="skill-tag">Angular</span>
                         <span class="skill-tag">WPF</span>
                         <span class="skill-tag">WinForms</span>
                         <span class="skill-tag">Xamarin</span>
                         <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">SignalR</span>
+                        <span class="skill-tag">WebSockets</span>
+                        <span class="skill-tag">AutoMapper</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -267,22 +281,41 @@
                     <h3 class="category-title">Cloud & DevOps</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">Azure Functions</span>
+                        <span class="skill-tag">App Insights</span>
                         <span class="skill-tag">AWS</span>
                         <span class="skill-tag">Supabase</span>
                         <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">IIS</span>
+                        <span class="skill-tag">VPS Admin</span>
+                        <span class="skill-tag">Cloudflare</span>
+                        <span class="skill-tag">DNS</span>
+                        <span class="skill-tag">SSL/TLS</span>
+                        <span class="skill-tag">WAF</span>
+                        <span class="skill-tag">TFS</span>
+                        <span class="skill-tag">Serilog</span>
                         <span class="skill-tag">Linux</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <div class="category-icon">🎮</div>
-                    <h3 class="category-title">Game Development</h3>
+                    <div class="category-icon">🗄️</div>
+                    <h3 class="category-title">Data & Backend</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Unreal Engine 5</span>
-                        <span class="skill-tag">Procedural Generation</span>
-                        <span class="skill-tag">Character Animation</span>
-                        <span class="skill-tag">World Building</span>
-                        <span class="skill-tag">NPC Behaviors</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">SSMS</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Swagger</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">JSON/XML</span>
+                        <span class="skill-tag">RabbitMQ</span>
+                        <span class="skill-tag">OAuth</span>
+                        <span class="skill-tag">JWT</span>
+                        <span class="skill-tag">Autofac DI</span>
+                        <span class="skill-tag">NUnit</span>
+                        <span class="skill-tag">MSTest</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -291,23 +324,38 @@
                     <div class="skill-tags">
                         <span class="skill-tag">LLM Integration</span>
                         <span class="skill-tag">AI Voice Bots</span>
-                        <span class="skill-tag">Business AI Systems</span>
+                        <span class="skill-tag">Telnyx</span>
+                        <span class="skill-tag">Wildix</span>
+                        <span class="skill-tag">ElevenLabs</span>
                         <span class="skill-tag">AI Workflows</span>
                         <span class="skill-tag">n8n</span>
+                        <span class="skill-tag">Webhooks</span>
                         <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">AI Generation</span>
                         <span class="skill-tag">Machine Learning</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <div class="category-icon">🗄️</div>
-                    <h3 class="category-title">Data & Backend</h3>
+                    <div class="category-icon">🏢</div>
+                    <h3 class="category-title">Business Platforms</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Entity Framework</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">Autofac DI</span>
+                        <span class="skill-tag">Zoho Suite</span>
+                        <span class="skill-tag">Zoho Flows</span>
+                        <span class="skill-tag">HubSpot</span>
+                        <span class="skill-tag">Salesforce</span>
+                        <span class="skill-tag">Kentico CMS</span>
+                        <span class="skill-tag">WordPress</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="category-icon">🎮</div>
+                    <h3 class="category-title">Game Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Unreal Engine 5</span>
+                        <span class="skill-tag">Blueprints</span>
+                        <span class="skill-tag">Procedural Generation</span>
+                        <span class="skill-tag">Character Animation</span>
+                        <span class="skill-tag">World Building</span>
+                        <span class="skill-tag">NPC Behaviors</span>
                     </div>
                 </div>
                 <div class="skill-category">                    <div class="category-icon">🎨</div>
@@ -315,22 +363,23 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Photoshop</span>
                         <span class="skill-tag">Video Editing</span>
-                        <span class="skill-tag">Shotcut</span>
                         <span class="skill-tag">AI Image/Video Gen</span>
-                        <span class="skill-tag">Voice Production</span>
-                        <span class="skill-tag">Music Production</span>
+                        <span class="skill-tag">Voice & Music Production</span>
                         <span class="skill-tag">Commercial Creation</span>
-                        <span class="skill-tag">Game Cutscenes</span>
                     </div>
                 </div>
                 <div class="skill-category">                    <div class="category-icon">🚀</div>
                     <h3 class="category-title">Leadership</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Solution Architecture</span>
+                        <span class="skill-tag">Design Patterns</span>
                         <span class="skill-tag">Team Mentoring</span>
                         <span class="skill-tag">Agile/Scrum</span>
                         <span class="skill-tag">Entrepreneurship</span>
                         <span class="skill-tag">Technical Education</span>
+                        <span class="skill-tag">Code Review</span>
+                        <span class="skill-tag">Cross-Team Collaboration</span>
+                        <span class="skill-tag">Client Communication</span>
                     </div>
                 </div>
             </div>
@@ -437,51 +486,51 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image project-blackdepths">
-                        <img src="unreal.jpg" alt="Black Depths Unreal Engine 5 submarine game screenshot" class="project-img" />
+                    <div class="project-image project-dev101">
+                        <img src="dev.jpg" alt="Dev 101 Program screenshot" class="project-img" />
                         <div class="project-overlay">
                             <a href="#contact" class="project-link">Learn More →</a>
                         </div>
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Unreal Engine</span>
-                            <span class="project-tag">3D Game</span>
+                            <span class="project-tag">Education</span>
+                            <span class="project-tag">Mentorship</span>
                         </div>
-                        <h3 class="project-title">Black Depths</h3>
+                        <h3 class="project-title">Dev 101 Program</h3>
                         <p class="project-description">
-                            Submarine game built in Unreal Engine 5 featuring procedural generation, custom character animations, 
-                            intricate world building, and sophisticated NPC behaviors. A deep dive into advanced game development.
+                            Taught 12+ students how to break into tech—covering programming fundamentals, 
+                            office skills, resume building, and interview preparation.
                         </p>
                         <div class="project-tech">
-                            <span>UE5</span>
-                            <span>Procedural Gen</span>
-                            <span>Animations</span>
+                            <span>Teaching</span>
+                            <span>Curriculum</span>
+                            <span>Career Dev</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image project-rockthebluff">
-                        <img src="rock.jpg" alt="Rock The Bluff website screenshot" class="project-img" />
+                    <div class="project-image project-netmonkey">
+                        <img src="net.jpg" alt="NetMonkey.dev website screenshot" class="project-img" />
                         <div class="project-overlay">
-                            <a href="https://rockthebluff.com" target="_blank" class="project-link">Visit Site →</a>
+                            <a href="https://netmonkey.dev" target="_blank" class="project-link">Visit Site →</a>
                         </div>
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Founder</span>
-                            <span class="project-tag">Web Design</span>
+                            <span class="project-tag">Owner</span>
+                            <span class="project-tag">Full Stack</span>
                         </div>
-                        <h3 class="project-title">Rock The Bluff</h3>
+                        <h3 class="project-title">NetMonkey.dev</h3>
                         <p class="project-description">
-                            Art and music festival that I own and operate. Built the website on WordPress 
-                            with extensive custom HTML blocks to showcase events and bring the community together.
+                            I own and operate this company. Designed and built the entire site from the ground up, 
+                            handling architecture, design, and implementation.
                         </p>
                         <div class="project-tech">
-                            <span>WordPress</span>
-                            <span>Custom HTML</span>
-                            <span>Event Tech</span>
+                            <span>Full Stack</span>
+                            <span>Web Design</span>
+                            <span>Solo Dev</span>
                         </div>
                     </div>
                 </div>
@@ -537,26 +586,26 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image project-dev101">
-                        <img src="dev.jpg" alt="Dev 101 Program screenshot" class="project-img" />
+                    <div class="project-image project-blackdepths">
+                        <img src="unreal.jpg" alt="Black Depths Unreal Engine 5 submarine game screenshot" class="project-img" />
                         <div class="project-overlay">
                             <a href="#contact" class="project-link">Learn More →</a>
                         </div>
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Education</span>
-                            <span class="project-tag">Mentorship</span>
+                            <span class="project-tag">Unreal Engine</span>
+                            <span class="project-tag">3D Game</span>
                         </div>
-                        <h3 class="project-title">Dev 101 Program</h3>
+                        <h3 class="project-title">Black Depths</h3>
                         <p class="project-description">
-                            Taught 12+ students how to break into tech—covering programming fundamentals, 
-                            office skills, resume building, and interview preparation.
+                            Submarine game built in Unreal Engine 5 featuring procedural generation, custom character animations, 
+                            intricate world building, and sophisticated NPC behaviors. A deep dive into advanced game development.
                         </p>
                         <div class="project-tech">
-                            <span>Teaching</span>
-                            <span>Curriculum</span>
-                            <span>Career Dev</span>
+                            <span>UE5</span>
+                            <span>Procedural Gen</span>
+                            <span>Animations</span>
                         </div>
                     </div>
                 </div>
@@ -587,29 +636,83 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image project-netmonkey">
-                        <img src="net.jpg" alt="NetMonkey.dev website screenshot" class="project-img" />
+                    <div class="project-image project-rockthebluff">
+                        <img src="rock.jpg" alt="Rock The Bluff website screenshot" class="project-img" />
                         <div class="project-overlay">
-                            <a href="https://netmonkey.dev" target="_blank" class="project-link">Visit Site →</a>
+                            <a href="https://rockthebluff.com" target="_blank" class="project-link">Visit Site →</a>
                         </div>
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span class="project-tag">Owner</span>
-                            <span class="project-tag">Full Stack</span>
+                            <span class="project-tag">Founder</span>
+                            <span class="project-tag">Web Design</span>
                         </div>
-                        <h3 class="project-title">NetMonkey.dev</h3>
+                        <h3 class="project-title">Rock The Bluff</h3>
                         <p class="project-description">
-                            I own and operate this company. Designed and built the entire site from the ground up, 
-                            handling architecture, design, and implementation.
+                            Art and music festival that I own and operate. Built the website on WordPress 
+                            with extensive custom HTML blocks to showcase events and bring the community together.
                         </p>
                         <div class="project-tech">
-                            <span>Full Stack</span>
-                            <span>Web Design</span>
-                            <span>Solo Dev</span>
+                            <span>WordPress</span>
+                            <span>Custom HTML</span>
+                            <span>Event Tech</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Credentials</span>
+                <h2 class="section-title">Education & Certifications</h2>
+            </div>
+            <div class="education-content">
+                <div class="education-card">
+                    <div class="education-icon">🎓</div>
+                    <div class="education-details">
+                        <h3>Associate of Applied Science</h3>
+                        <h4>Computer Programming</h4>
+                        <p class="education-school">Ivy Tech Community College</p>
+                        <p class="education-date">2012 - 2014</p>
+                    </div>
+                </div>
+                <div class="certifications-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon">🛡️</div>
+                        <h4>Microsoft Cybersecurity Stack</h4>
+                        <p>Advanced Identity and Endpoint Protection</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🔍</div>
+                        <h4>Penetration Testing</h4>
+                        <p>Advanced Web Testing</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🔐</div>
+                        <h4>Secure Coding</h4>
+                        <p>Programming Foundations</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🤖</div>
+                        <h4>AI Foundations</h4>
+                        <p>Machine Learning</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🔄</div>
+                        <h4>Scrum: Advanced</h4>
+                        <p>Agile Methodologies</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">🐙</div>
+                        <h4>GitHub for Web Designers</h4>
+                        <p>Version Control</p>
+                    </div>
+                </div>
+                <p class="references-note">References available upon request</p>
             </div>
         </div>
     </section>
