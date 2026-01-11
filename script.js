@@ -92,15 +92,14 @@ setTimeout(typePhrase, 1000);
 // ====================================
 
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0,
+    rootMargin: '0px 0px 500px 0px' // Trigger 500px BEFORE section enters viewport
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
         }
     });
 }, observerOptions);
@@ -108,10 +107,44 @@ const observer = new IntersectionObserver((entries) => {
 // Observe all sections for scroll animations
 const sections = document.querySelectorAll('section > .container');
 sections.forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    section.classList.add('fade-in-section');
     observer.observe(section);
+});
+
+// Add the fade-in CSS
+const fadeStyle = document.createElement('style');
+fadeStyle.textContent = `
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(15px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .fade-in-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
+document.head.appendChild(fadeStyle);
+
+// Immediately show all sections that are anywhere near the viewport on page load
+document.addEventListener('DOMContentLoaded', () => {
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        // If section is anywhere in the top 150% of viewport height, show it immediately
+        if (rect.top < window.innerHeight * 1.5) {
+            section.classList.add('visible');
+        }
+    });
+});
+
+// Also check on load event as backup
+window.addEventListener('load', () => {
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 1.5) {
+            section.classList.add('visible');
+        }
+    });
 });
 
 // ====================================
